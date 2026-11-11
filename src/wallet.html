@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DeWEB Wallet</title>
+<style>
+:root{--bg:#07100b;--panel:#101d15;--line:#2b4a38;--fg:#e6f2ea;--dim:#8aa695;--accent:#56e6b0;--err:#f06a60;--mono:ui-monospace,SFMono-Regular,Consolas,Menlo,monospace}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:
+ radial-gradient(120% 80% at 10% 0%,rgba(70,235,170,.22),transparent 55%),
+ radial-gradient(80% 70% at 100% 100%,rgba(92,140,255,.16),transparent 60%),
+ linear-gradient(160deg,#07110d,#0b1912 55%,#070b09);
+ color:var(--fg);font:12px/1.6 var(--mono);overflow:hidden}
+.wallet-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 18px 12px;border-bottom:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.045);backdrop-filter:blur(22px) saturate(160%)}
+.wallet-head b{font-size:12px;letter-spacing:.16em;color:#e9f7ef}
+.wallet-head span{font-size:9px;color:var(--dim);letter-spacing:.1em}
+.wallet-main{padding:18px;overflow:auto;height:calc(100% - 59px)}
+.wallet-card{border:1px solid rgba(255,255,255,.14);border-radius:18px;background:linear-gradient(135deg,rgba(255,255,255,.1),rgba(255,255,255,.025));box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 18px 40px rgba(0,0,0,.2);padding:16px;backdrop-filter:blur(18px)}
+.wallet-card h2{font-size:12px;margin:0 0 8px;letter-spacing:.1em}
+.wallet-card p{margin:0;color:var(--dim);font-size:11px;line-height:1.8}
+.wallet-note{margin-top:12px;color:var(--dim);font-size:10px;line-height:1.8}
+.mask{position:fixed;inset:0;display:none;place-items:center;background:rgba(2,7,5,.64);backdrop-filter:blur(12px);z-index:20;padding:16px}
+.mask.on{display:grid}
+.modal{width:min(100%,390px);max-height:calc(100dvh - 32px);overflow:auto;border:1px solid rgba(255,255,255,.16);border-radius:18px;background:linear-gradient(160deg,rgba(22,40,29,.94),rgba(9,18,13,.96));box-shadow:0 24px 70px rgba(0,0,0,.45);backdrop-filter:blur(28px) saturate(160%)}
+.hd{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid rgba(255,255,255,.1);font-size:10px;letter-spacing:.12em;color:#dcece2}
+.bd{padding:14px}
+.ft{display:flex;justify-content:flex-end;gap:7px;padding:11px 14px;border-top:1px solid rgba(255,255,255,.1)}
+p{margin:0 0 10px;font-size:11px;line-height:1.8;color:#d8e8de}
+.btn{border:1px solid rgba(255,255,255,.16);border-radius:11px;background:rgba(255,255,255,.065);color:#e9f6ee;font:11px/1.4 var(--mono);padding:9px 11px;cursor:pointer}
+.btn:hover{border-color:var(--accent);color:#fff}
+.btn.on{background:var(--accent);border-color:var(--accent);color:#03150d;font-weight:700}
+.btnrow{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.tip-addr{border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(4,10,7,.3);padding:9px 10px;word-break:break-all;white-space:pre-wrap;color:#dcece2;font-size:10.5px;max-height:280px;overflow:auto}
+.wc-x{color:var(--dim);cursor:pointer}
+.tip-note{font-size:10px;color:var(--dim);line-height:1.8;margin-top:10px}
+#universal-widget-root{max-width:100%}
+</style>
+</head>
+<body>
+<div class="wallet-head"><b>DEWEB // WALLET</b><span>OKX CONNECT</span></div>
+<div class="wallet-main">
+  <div class="wallet-card">
+    <h2>连接钱包</h2>
+    <p>钱包操作在这个独立窗口中完成，不会把 DeWeb 站点压到后台。</p>
+    <p class="wallet-note">扫码后请在 OKX App 内确认。若已启用通行密钥（Passkey），由 OKX App 验证。</p>
+  </div>
+</div>
+<script src="./wallet-service.js"></script>
+</body>
+</html>
