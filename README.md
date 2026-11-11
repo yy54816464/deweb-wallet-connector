@@ -4,6 +4,11 @@ This repository contains the **wallet connection mechanism** used by DeWEB Deskt
 
 The complete DeWEB Desktop app is **not open sourced here**.
 
+Download the latest Windows build:
+
+https://github.com/yy54816464/deweb-desktop-releases/releases/latest
+
+
 ## What is included
 
 ```text
